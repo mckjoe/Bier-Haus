@@ -26,3 +26,14 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## specs
+behavior | input | output
+--------|--------|-------
+create keg objects automatically | hard coded | beer name, company name, abv, etc.
+display kegs on screen for user | click | website will display list of available kegs
+edit current beer | click on edit button | recieve form to edit the kegs properties
+create button to add new keg to list |button click| form to add new beer appears
+add ability to remove pints from the keg | click | pints go from 124 to 123 available
+color beer based on price| $5.00 | green
+change appearence based on abv | if above 12% | red border

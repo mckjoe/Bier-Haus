@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>{{title}}</h1>
+
+  <ul>
+    <li *ngFor="let currentKeg of kegs"><h4><strong>Name:</strong>  {{currentKeg.name}}</h4><strong>Brand:</strong>  {{currentKeg.brand}}<br><strong>Alcohol content:</strong>{{currentKeg.abv}}<br><strong>Price:</strong>  ${{currentKeg.price}}</li>
+  </ul>
+
+</div>

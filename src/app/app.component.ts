@@ -15,5 +15,17 @@ export class AppComponent {
     new Keg("River Ale", "Deschutes", 4, 5),
     new Keg("Chainbreaker White IPA", "Deschutes", 5.6, 6),
   ];
-  
+  selectedKeg: Keg = this.kegs[0];
+
+  editKeg() {
+    alert("You just requested to edit this keg");
+  }
+
+  priceColor(currentKeg) {
+    if (currentKeg.price === 6) {
+      return "bg-danger";
+    } else if (currentKeg.price === 5) {
+      return "bg-info";
+    }
+  }
 }

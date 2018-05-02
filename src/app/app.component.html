@@ -1,8 +1,16 @@
 <div class="container">
-  <h1>{{title}}</h1>
+  <div id="main">
+    <h1>{{title}}</h1>
+    <ul>
+      <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of kegs"><h4><strong>Name:</strong>  {{currentKeg.name}}</h4><strong>Brand:</strong>  {{currentKeg.brand}}<br><strong>Alcohol content:</strong>{{currentKeg.abv}}<br><strong>Price:</strong>  ${{currentKeg.price}}<br><strong>Pints remaining:</strong>  {{currentKeg.pints}}<br><button class="editButton" (click)="editKeg()">Edit Keg</button></li>
+    </ul>
+  </div>
+  <div id="editForm">
+    <h4>{{selectedKeg.name}}</h4>
+    <p><strong>Brand: </strong>{{selectedKeg.brand}}</p>
+    <p><strong>Pints remaining: </strong>{{selectedKeg.pints}}</p>
+    <p><strong>Price:</strong>  ${{selectedKeg.price}}</p>
+    <p><strong>Alcohol content:</strong>  ${{selectedKeg.abv}}</p>
 
-  <ul>
-    <li *ngFor="let currentKeg of kegs"><h4><strong>Name:</strong>  {{currentKeg.name}}</h4><strong>Brand:</strong>  {{currentKeg.brand}}<br><strong>Alcohol content:</strong>{{currentKeg.abv}}<br><strong>Price:</strong>  ${{currentKeg.price}}</li>
-  </ul>
-
+  </div>
 </div>

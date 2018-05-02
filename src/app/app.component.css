@@ -1,8 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
 li {
-   border: 1px solid lightblue;
-   padding: 15px 10px;
-   margin-bottom: 15px;
-   width: 300px;
-   background-color: lightgray;
-   list-style: none;
+  border: 1px solid lightblue;
+  padding: 15px 10px;
+  margin-bottom: 15px;
+  width: 300px;
+  list-style: none;
+}
+
+.editButton {
+  margin-top: 5px;
+}
+
+#main {
+  float: left;
+}
+
+#editForm {
+  float: left;
+  border: 1px solid lightblue;
+  padding: 15px 10px;
+  width: 250px;
+  margin-left: 100px;
+  margin-top: 150px;
 }

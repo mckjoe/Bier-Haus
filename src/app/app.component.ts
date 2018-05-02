@@ -15,10 +15,10 @@ export class AppComponent {
     new Keg("River Ale", "Deschutes", 4, 5),
     new Keg("Chainbreaker White IPA", "Deschutes", 5.6, 6),
   ];
-  selectedKeg: Keg = this.kegs[0];
+  selectedKeg: Keg = this.kegs[1];
 
-  editKeg() {
-    alert("You just requested to edit this keg");
+  editKeg(clickedKeg) {
+    this.selectedKeg = clickedKeg;
   }
 
   priceColor(currentKeg) {

@@ -25,4 +25,9 @@ li {
   width: 250px;
   margin-left: 100px;
   margin-top: 150px;
+  background: salmon;
+}
+input {
+  text-align: center;
+  margin-bottom: 5px;
 }

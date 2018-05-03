@@ -17,17 +17,15 @@ export class AppComponent {
   ];
   selectedKeg = null;
 
+  addKeg(newKeg: Keg) {
+    this.masterBeerList.push(newKeg);
+  }
+
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
   }
 
   finishedEditing() {
     this.selectedKeg = null;
-  }
-
-
-
-  sellPint(currentKeg) {
-    currentKeg.pints -= 1;
   }
 }

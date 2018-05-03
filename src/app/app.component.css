@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+}
+
 li {
   border: 1px solid lightblue;
   padding: 15px 10px;
@@ -14,17 +18,10 @@ li {
   margin-top: 5px;
 }
 
-#main {
-  float: left;
-}
-
 #editForm {
-  float: left;
   border: 1px solid lightblue;
   padding: 15px 10px;
   width: 250px;
-  margin-left: 100px;
-  margin-top: 150px;
   background: salmon;
 }
 input {

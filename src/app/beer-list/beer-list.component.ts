@@ -13,8 +13,13 @@ export class BeerListComponent {
   }
 
   sellPint(currentKeg) {
-    currentKeg.pints -= 1;
+    if (currentKeg.pints > 1) {
+      currentKeg.pints -= 1;
+    } else {
+      currentKeg.pints = "No";
+    }
   }
+
 
   priceColor(currentKeg) {
     if (currentKeg.price >= 6) {

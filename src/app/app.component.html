@@ -1,16 +1,21 @@
 <div class="container">
-  <div id="main">
+
+
+      <app-edit-beer [childSelectedBeer]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></app-edit-beer>
+
+
     <h1>{{title}}</h1>
-  </div>
-  <div *ngIf="selectedKeg" id="editForm">
-    <h4>{{selectedKeg.name}}</h4>
-    <input [(ngModel)]="selectedKeg.name"><br>
-    <input [(ngModel)]="selectedKeg.brand"><br>
-    <input [(ngModel)]="selectedKeg.abv"><br>
-    <input [(ngModel)]="selectedKeg.price">
-    <input [(ngModel)]="selectedKeg.pints"><br>
-    <button (click)="finishedEditing()">Done</button>
-  </div>
+    <app-beer-list [childBeerList]="masterBeerList" (clickSender)="editKeg($event)"></app-beer-list>
+    <div *ngIf="selectedKeg" id="editForm">
+
+      <h4>{{selectedKeg.name}}</h4>
+      <input [(ngModel)]="selectedKeg.name"><br>
+      <input [(ngModel)]="selectedKeg.brand"><br>
+      <input [(ngModel)]="selectedKeg.abv"><br>
+      <input [(ngModel)]="selectedKeg.price">
+      <input [(ngModel)]="selectedKeg.pints"><br>
+      <button (click)="finishedEditing()">Done</button>
+    </div>
+
+    <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
 </div>
-<app-beer-list [childBeerList]="masterBeerList" (clickSender)="editKeg($event)"></app-beer-list>
-<app-edit-beer [childSelectedBeer]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-beer>

@@ -7,7 +7,7 @@ import { Keg } from './model/tap-room.model';
 })
 export class AppComponent {
   title = 'Bier Haus';
-  kegs: Keg[] = [
+  masterBeerList: Keg[] = [
     new Keg("Na Zdravi Pils", "Southern Oregon", 4.8, 5),
     new Keg("Kolsch", "Occidental", 4.4, 5),
     new Keg("Sterling Pils", "Ninkasi", 5.1, 6),
@@ -21,17 +21,11 @@ export class AppComponent {
     this.selectedKeg = clickedKeg;
   }
 
-  priceColor(currentKeg) {
-    if (currentKeg.price >= 6) {
-      return "bg-danger";
-    } else{
-      return "bg-info";
-    }
+  finishedEditing() {
+    this.selectedKeg = null;
   }
 
-  finishedEditing() {
-  this.selectedKeg = null;
-  }
+
 
   sellPint(currentKeg) {
     currentKeg.pints -= 1;

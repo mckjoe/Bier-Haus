@@ -1,9 +1,6 @@
 <div class="container">
   <div id="main">
     <h1>{{title}}</h1>
-    <ul>
-      <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of kegs"><h4><strong>Name:</strong>  {{currentKeg.name}}</h4><strong>Brand:</strong>  {{currentKeg.brand}}<br><strong>Alcohol content: </strong>{{currentKeg.abv}}%<br><strong>Price:</strong>  ${{currentKeg.price}}<br><strong>Pints remaining:</strong>  {{currentKeg.pints}} pints<br><button class="editButton" (click)="editKeg(currentKeg)">Edit Keg</button>  <button (click)="sellPint(currentKeg)">Sell pint</button></li>
-    </ul>
   </div>
   <div *ngIf="selectedKeg" id="editForm">
     <h4>{{selectedKeg.name}}</h4>
@@ -15,3 +12,5 @@
     <button (click)="finishedEditing()">Done</button>
   </div>
 </div>
+<app-beer-list [childBeerList]="masterBeerList" (clickSender)="editKeg($event)"></app-beer-list>
+<app-edit-beer [childSelectedBeer]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-beer>

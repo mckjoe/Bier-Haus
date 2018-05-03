@@ -1,0 +1,9 @@
+<div *ngIf="selectedKeg">
+  <h4>{{selectedKeg.name}}</h4>
+  <input [(ngModel)]="selectedKeg.name"><br>
+  <input [(ngModel)]="selectedKeg.brand"><br>
+  <input [(ngModel)]="selectedKeg.abv"><br>
+  <input [(ngModel)]="selectedKeg.price">
+  <input [(ngModel)]="selectedKeg.pints"><br>
+  <button (click)="finishedEditing()">Done</button>
+</div>
